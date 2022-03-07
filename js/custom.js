@@ -1,4 +1,11 @@
 /*! jQuery Migrate v3.3.2 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+
+// Preloader 
+$(window).on('load',function(){
+	$('.preloader').fadeOut('slow');
+})
+
+// Menu direction
 $(".menu-item a").click(function(e) {
        e.preventDefault();
        var aid = $(this).attr("href");
@@ -9787,22 +9794,6 @@ function (t, e) {
                      }
               });
        });
-       $('.art-preloader-load-first').hide();
-       var bar = new ProgressBar.Line(preloader, {
-              strokeWidth: 1.7,
-              easing: 'easeInOut',
-              duration: 1400,
-              delay: 750,
-              trailWidth: 1.7,
-              svgStyle: {
-                     width: '100%',
-                     height: '100%'
-              },
-              step: (state, bar) => {
-                     bar.setText(Math.round(bar.value() * 100) + ' %');
-              }
-       });
-       bar.animate(1);
        $('.art-input').keyup(function () {
               if ($(this).val()) {
                      $(this).addClass('art-active');
